@@ -1,0 +1,16 @@
+{
+   "source" : "salesforce"
+  ,"object" : "User"
+  ,"id" : "user"
+  ,"fields" : [
+		{
+			"name" : "Id"
+		},
+		{
+			"name" : "Name"
+		},
+		{
+		  "name" : "SystemModstamp", "acts_as" : ["Timestamp"]
+		}
+	]
+}

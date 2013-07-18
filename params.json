@@ -1,0 +1,15 @@
+{
+  "project_name"  : "BAM_TEST",
+  "project_pid"   : "cct1f72vd9dta30zmot01sqw9pkza9je",
+  "sf_password"   : "don1tremember",
+  "sf_token"      : "zG7ceB1p5xSs5WA6buu6txxB",
+  "sf_login"      : "petr.olmer@gmail.com",
+  "gd_login"      : "svarovsky+test@gooddata.com",
+  "gd_pass"       : "",
+  
+  "additional_params": {
+    "SF_SERVER_FOR_LINKS" : "https://na1.salesforce.com/",
+    "GDC_EVENTSTORE" : "es_1",
+    "CUSTOMER_TIMEZONE" : "UTC"
+  }
+}

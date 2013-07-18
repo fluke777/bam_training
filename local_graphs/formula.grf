@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="fluke" created="Tue Feb 05 15:38:24 PST 2013" guiVersion="3.3.2" id="1360179808937" licenseType="Commercial" modified="Thu Jul 18 11:14:04 PDT 2013" modifiedBy="tomassvarovsky" name="process_name" revision="1.15" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${PROJECT}/metadata/${FLOW}/${NAME}/1_in.xml" id="Metadata0"/>
+<Metadata fileURL="${PROJECT}/metadata/${FLOW}/${NAME}/1_out.xml" id="Metadata1"/>
+<MetadataGroup id="ComponentGroup0" name="metadata"/>
+<Property fileURL="params.prm" id="GraphParameter0"/>
+<Property fileURL="workspace.prm" id="GraphParameter2"/>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="data/1_in.csv" guiHeight="77" guiName="CSV Reader" guiWidth="128" guiX="124" guiY="169" id="DATA_READER0" quoteCharacter="&quot;" quotedStrings="true" skipRows="1" type="DATA_READER"/>
+<Node enabled="enabled" fileURL="data/out.csv" guiHeight="77" guiName="CSV Writer" guiWidth="128" guiX="609" guiY="169" id="DATA_WRITER0" outputFieldNames="true" quoteCharacter="&quot;" quotedStrings="true" type="DATA_WRITER"/>
+<Node enabled="enabled" guiHeight="65" guiName="Reformat" guiWidth="128" guiX="365" guiY="175" id="REFORMAT0" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.* = $in.0.*;
+	$out.0.Amount = nvl2($in.0.Amount, toString(str2decimal($in.0.Amount) * 10D), "0");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DATA_READER0:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="REFORMAT0:0"/>
+<Edge fromNode="REFORMAT0:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DATA_WRITER0:0"/>
+</Phase>
+</Graph>

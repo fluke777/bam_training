@@ -1,0 +1,28 @@
+{
+  "target" : "gooddata",
+  "id": "owner_dim",
+  "gd_name": "opp_owner",
+  "fields": [{
+    "type": "attribute",
+    "name": "id",
+    "meta": "Id"
+  }, {
+    "type": "label",
+    "for": "id",
+    "name": "name",
+    "meta": "Name"
+  }, {
+    "type": "label",
+    "for": "id",
+    "name": "url",
+    "meta": "Url"
+  }, {
+    "type": "attribute",
+    "name": "department",
+    "meta": "Department"
+  }, {
+    "type": "attribute",
+    "name": "region",
+    "meta": "Division"
+  }]
+}

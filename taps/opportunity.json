@@ -1,0 +1,25 @@
+{
+   "source" : "salesforce"
+  ,"object" : "Opportunity"
+  ,"id" : "opportunity"
+  ,"fields" : [
+		{
+			"name" : "Id"
+		},
+		{
+			"name" : "Name"
+		},
+		{
+			"name" : "Amount"
+		},
+		{
+			"name" : "OwnerId"
+		},
+		{
+			"name" : "CloseDate"
+		},
+		{
+		  "name" : "SystemModstamp", "acts_as" : ["Timestamp"]
+		}
+	]
+}
